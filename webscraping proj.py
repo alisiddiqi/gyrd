@@ -42,5 +42,5 @@ print(len(price_per_hour))
 df = pd.DataFrame({'Lot Name': names, 'Address': address, 'Price': price_per_hour})
 df.to_csv('EdmontonImPark3.csv', index=False, encoding='utf-8')
 
-
+driver.quit()
 #hello
