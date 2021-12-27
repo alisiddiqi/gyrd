@@ -24,7 +24,7 @@ for line in lines:
         line_name = line.find_element_by_class_name('LocationListItem__title')
         line_price = line.find_element_by_class_name('LocationDetailsSearchDetails__detail__value')
     except:
-        prices = ''
+        line_price = ''
     list_of_addresses.append(line_name.text + " Edmonton, AB")
     price_per_hour.append(line_price.text)
   
