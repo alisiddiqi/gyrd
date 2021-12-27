@@ -19,28 +19,33 @@ button = driver.find_element(By.XPATH, '//*[@id="pageScrollWrapper"]/div[3]/div/
 button.click()
 button.click()
 button.click()
-time.sleep(15)
+time.sleep(10)
 
 
 list_of_addresses = []
 price_per_hour = []
 
-lot_names = driver.find_elements_by_xpath('//*[@id="pageScrollWrapper"]/div[3]/div/div[2]/div[1]/div/div[2]/div[2]/div/a/div[1]')
-prices = driver.find_elements_by_xpath('//*[@id="pageScrollWrapper"]/div[3]/div/div[2]/div[1]/div/div[2]/div[2]/div/div/a/div/span[2]')
-for name in lot_names:
-        list_of_addresses.append(name.text)
+lines = driver.find_elements_by_class_name('params--1Cc3Q')
 
-
-for p in prices:
-    price_per_hour.append(p.text)
+for line in lines:
+    try:
+        line_name = driver.find_element_by_class_name('brand-button__text')
+        line_price = driver.find_element_by_class_name('text-small')
+    except:
+        line_price = ''
+    list_of_addresses.append(line_name.text)
+    price_per_hour.append(line_price.text)
     
+
+
+
 print(len(list_of_addresses))
 print(len(price_per_hour))
 print(list_of_addresses)
 print(price_per_hour)
 # df = pd.DataFrame({'Lot Name': names, 'Price': price_per_hour})
 # df.to_csv('EdmontonIndigo.csv', index=False, encoding='utf-8')
-#driver.quit()
+driver.quit()
 
 # #hello
 
