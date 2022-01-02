@@ -30,7 +30,7 @@ for name in lot_names:
 
 
 for p in prices:
-    price_per_hour.append(p.text)
+    price_per_hour.append("Hourly Rate: " + p.text)
     
 print(len(names))
 print(len(price_per_hour))
