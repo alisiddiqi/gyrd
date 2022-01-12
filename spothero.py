@@ -4,6 +4,7 @@ import pandas as pd
 from selenium.webdriver.common.by import By
 import time
 
+
 driver = webdriver.Chrome(executable_path= './drivers/chromedriver')
 driver.get('https://spothero.com/search?kind=city&id=420&starts=2021-12-22T18%3A30&ends=2021-12-22T21%3A30')
 # time.sleep(1)
